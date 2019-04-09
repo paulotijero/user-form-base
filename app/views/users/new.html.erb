@@ -1,13 +1,13 @@
 <h1>Sign up!</h1>
 
-<!--
+<% if @user.errors.any? %>
 <div class="errors">
   <ul>
     <li>One error</li>
     <li>Another error</li>
   </ul>
 </div>
--->
+<% end %>
 
 <%= form_for(@user) do |f| %>
   <ul>

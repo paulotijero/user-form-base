@@ -8,7 +8,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params[:user])
+    @user = User.create(user_params)
+    if @user.save
+      redirect_to users_path
+    else
+      render :new
+    end
   end
 
   private
